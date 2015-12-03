@@ -4,6 +4,8 @@ platform TVOS
 
 options
 {
+    tvosnative
+    aarch64
     lib
     output-name="lib/tvos/libs3eIOSController.a"
     output-name-debug="lib/tvos/libs3eIOSController_d.a"
