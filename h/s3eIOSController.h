@@ -67,7 +67,7 @@ typedef enum s3eIOSControllerButton
     S3E_IOSCONTROLLER_BUTTON_RIGHT_THUMBSTICK_UP,
     S3E_IOSCONTROLLER_BUTTON_RIGHT_THUMBSTICK_DOWN,
     S3E_IOSCONTROLLER_BUTTON_RIGHT_THUMBSTICK_LEFT,
-    S3E_IOSCONTROLLER_BUTTON_RIGHT_THUMBSTICK_RIGHT,
+    S3E_IOSCONTROLLER_BUTTON_RIGHT_THUMBSTICK_RIGHT
 } s3eIOSControllerButton;
 
 typedef enum s3eIOSControllerAxis
@@ -79,7 +79,7 @@ typedef enum s3eIOSControllerAxis
     S3E_IOSCONTROLLER_AXIS_RIGHT_THUMBSTICK_X,
     S3E_IOSCONTROLLER_AXIS_RIGHT_THUMBSTICK_Y,
     S3E_IOSCONTROLLER_AXIS_LEFT_TRIGGER,
-    S3E_IOSCONTROLLER_AXIS_RIGHT_TRIGGER,
+    S3E_IOSCONTROLLER_AXIS_RIGHT_TRIGGER
 } s3eIOSControllerAxis;
 // \cond HIDDEN_DEFINES
 S3E_BEGIN_C_DECL
@@ -105,6 +105,7 @@ s3eBool s3eIOSControllerAvailable();
  * @see s3eIOSControllerUnRegister
  * @note For more information on the system data passed as a parameter to the callback
  * registered using this function, see the @ref s3eIOSControllerCallback enum.
+ * @note It is not necessary to define a return value for any registered callback.
  */
 s3eResult s3eIOSControllerRegister(s3eIOSControllerCallback cbid, s3eCallback fn, void* userData);
 
@@ -115,9 +116,6 @@ s3eResult s3eIOSControllerRegister(s3eIOSControllerCallback cbid, s3eCallback fn
  * @return
  * - @ref S3E_RESULT_SUCCESS if no error occurred.
  * - @ref S3E_RESULT_ERROR if the operation failed.\n
- * @note For more information on the systemData passed as a parameter to the callback
- * registered using this function, see the s3eIOSControllerCallback enum.
- * @note It is not necessary to define a return value for any registered callback.
  * @see s3eIOSControllerRegister
  */
 s3eResult s3eIOSControllerUnRegister(s3eIOSControllerCallback cbid, s3eCallback fn);
